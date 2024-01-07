@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index Page</title>
+</head>
+<body>
+    <h1>Item:</h1>
+    {% for item in item_list %}
+    <ul>
+        <li>
+        {{ item.id }} -- {{ item.item_name }}
+        </li>
+    </ul>
+    {% endfor %}
+</body>
+</html>
