@@ -16,5 +16,13 @@ def index(request):
 
 
 def item(request):
-    print(datetime.now() - timedelta(days=7))
     return HttpResponse("This is the item page")
+
+
+def detail(request, item_id):
+    item = Item.objects.get(pk=item_id)
+    context = {
+        'item': item,
+    }
+    return render(request,'food/detail.html',context)
+
