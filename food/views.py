@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.views.decorators.http import require_http_methods
 
 from .forms import ItemForm
 from .models import Item
@@ -13,6 +14,7 @@ def index(request):
     return render(request, 'food/index.html', context)
 
 
+@require_http_methods(["GET", "POST"])
 def item(request: HttpResponse) -> HttpResponse:
     return HttpResponse("This is the item page")
 
