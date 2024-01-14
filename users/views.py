@@ -8,7 +8,7 @@ from django.views.decorators.http import require_http_methods
 # Create your views here.
 
 
-@require_http_methods(["GET", "POST"])
+@require_http_methods(["GET", "POST"]) # Sensitive
 def register(request: HttpResponse) -> HttpResponse:
     if request.method == 'POST':
         form = UserCreationForm(request.POST)

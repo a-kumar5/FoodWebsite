@@ -29,7 +29,7 @@ def detail(request: HttpResponse, item_id: int) -> HttpResponse:
     return render(request, 'food/detail.html', context)
 
 
-@require_http_methods(["GET", "POST"])
+@require_http_methods(["GET", "POST"]) # Sensitive
 def create_item(request: HttpResponse) -> HttpResponse:
     form = ItemForm(request.POST or None)
 
@@ -40,7 +40,7 @@ def create_item(request: HttpResponse) -> HttpResponse:
     return render(request, "food/item-form.html", {'form': form})
 
 
-@require_http_methods(["GET", "POST"])
+@require_http_methods(["GET", "POST"]) # Sensitive
 def update_item(request: HttpResponse, item_id: int) -> HttpResponse:
     item = Item.objects.get(id=item_id)
     form = ItemForm(request.POST or None, instance=item)
@@ -52,7 +52,7 @@ def update_item(request: HttpResponse, item_id: int) -> HttpResponse:
     return render(request, 'food/item-form.html', {'form': form, 'item' :item})
 
 
-@require_http_methods(["GET", "POST"])
+@require_http_methods(["GET", "POST"]) # Sensitive
 def delete_item(request: HttpResponse, item_id: int) -> HttpResponse:
     item = Item.objects.get(id=item_id)
     if request.method == 'POST':
