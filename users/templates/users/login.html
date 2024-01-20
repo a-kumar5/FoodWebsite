@@ -1,5 +1,19 @@
-<form method="POST">
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit">Login</button>
-</form>
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'users/style.css' %}">
+    <title>Profile Card Design</title>
+</head>
+<body>
+     <div class="container">
+        <div class="profile-box">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit">Login</button>
+            </form>
+        </div>
+     </div>
+</body>
+</html>
