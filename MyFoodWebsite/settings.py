@@ -122,9 +122,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-LOGIN_REDIRECT_URL = 'profile'
+LOGIN_REDIRECT_URL = 'food:index'
 LOGIN_URL = 'login'
-MEDIA_ROOT = os.path.join(BASE_DIR,'pictures')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'pictures')
 MEDIA_URL = '/pictures/'
 
 # Default primary key field type

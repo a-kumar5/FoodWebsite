@@ -1,19 +1,2 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="{% static 'users/style.css' %}">
-    <title>Profile Card Design</title>
-</head>
-<body>
-     <div class="container">
-        <div class="profile-box">
-            <img src="{% static 'users/images/menu.png' %}" class="menu-icon">
-            <img src="{% static 'users/images/setting.png' %}" class="setting-icon">
-            <img src="{{ user.profile.image.url }}"  class="profile-pic">
-            <h3>{{ user.username }}</h3>
-            <p>SAP Developer At Wipro, {{ user.profile.location }}</p>
-        </div>
-     </div>
-</body>
-</html>
+<h1>{{ user.username }}</h1>
+<img src="{{ user.profile.image.url }}">
