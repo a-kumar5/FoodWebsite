@@ -17,10 +17,11 @@
             <h6>&#8377;{{ item.item_price }}</h6>
         </div>
         <div class="col-md-2">
+            <br/><br/>
             <a href="{% url 'food:detail' item.id %}" class="btn btn-success">Details</a>
         </div>
-
     </div>
+    <br/><br/>
     {% endfor %}
     {% endblock %}
 </body>
