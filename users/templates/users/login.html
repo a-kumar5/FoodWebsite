@@ -1,19 +1,28 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="{% static 'users/style.css' %}">
-    <title>Profile Card Design</title>
-</head>
-<body>
-     <div class="container">
-        <div class="profile-box">
-            <form method="POST">
-                {% csrf_token %}
-                {{ form }}
-                <button type="submit">Login</button>
-            </form>
+{% extends 'food/base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <div class="card-title">
+                        Login
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <div class="form-group">
+                                {{ field.name }}
+                                {{ field }}
+                            </div>
+                        {% endfor %}
+                        <button type="submit" class="btn-info">Login</button>
+                    </form>
+                </div>
+            </div>
         </div>
-     </div>
-</body>
-</html>
+    </div>
+</div>
+{% endblock %}
