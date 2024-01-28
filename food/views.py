@@ -59,6 +59,11 @@ class FoodCreateItem(CreateView):
     fields = ['item_name', 'item_desc', 'item_price', 'item_image']
     template_name = 'food/item-form.html'
 
+    def form_valid(self, form):
+        form.instance.user_name = self.request.user
+
+        return super().form_valid(form)
+
 
 
 @require_http_methods(["GET", "POST"]) # Sensitive
